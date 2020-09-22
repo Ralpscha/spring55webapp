@@ -1,4 +1,4 @@
-package guru.springframework.spring5webapp;
+package nl.ralphvanschaik.spring5webapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
