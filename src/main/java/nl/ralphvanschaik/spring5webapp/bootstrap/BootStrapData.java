@@ -23,8 +23,8 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Publisher dbb = new Publisher("De Bezige Bij", "Nederland");
-        publisherRepository.save(dbb);
+        Publisher publisherDeBezigeBij = new Publisher("De Bezige Bij", "Nederland");
+        publisherRepository.save(publisherDeBezigeBij);
         System.out.println("Publisher Count: " + publisherRepository.count());
 
 
@@ -33,28 +33,28 @@ public class BootStrapData implements CommandLineRunner {
 
         eric.getBooks().add(ddd);
         ddd.getAuthors().add(eric);
-        ddd.setPublisher(dbb);
-        dbb.getBooks().add(ddd);
+        ddd.setPublisher(publisherDeBezigeBij);
+        publisherDeBezigeBij.getBooks().add(ddd);
 
         authorRepository.save(eric);
         bookRepository.save(ddd);
-        publisherRepository.save(dbb);
+        publisherRepository.save(publisherDeBezigeBij);
 
 
         Author rod = new Author("Rod", "Johnson");
         Book noEJB = new Book("J2EE Development withoudt EJB", "432432");
         rod.getBooks().add(noEJB);
         noEJB.getAuthors().add(rod);
-        noEJB.setPublisher(dbb);
-        dbb.getBooks().add(noEJB);
+        noEJB.setPublisher(publisherDeBezigeBij);
+        publisherDeBezigeBij.getBooks().add(noEJB);
 
         authorRepository.save(rod);
         bookRepository.save(noEJB);
-        publisherRepository.save(dbb);
+        publisherRepository.save(publisherDeBezigeBij);
 
         System.out.println("Started from BootStrapData");
         System.out.println("Number of books: " + bookRepository.count());
-        System.out.println("Publisher number of books: " + dbb.getBooks().size());
+        System.out.println("Publisher number of books: " + publisherDeBezigeBij.getBooks().size());
 
 
     }
