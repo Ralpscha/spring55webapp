@@ -13,7 +13,7 @@ public class Book {
     private String title;
     private String isbn;
 
-    @OneToMany
+    @ManyToOne
     private Publisher publisher;
 
     @ManyToMany
